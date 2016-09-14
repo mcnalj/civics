@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="formApp">
+<head>
+	<link href="app-form/css/form-styles.css" rel="stylesheet">
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+	<h1>Three Branches of Government</h1>
+	<div class="wrapper">
+		<div class="worksheet">
+			<div class="branch">
+				<p>Legislative Branch (Congress)</p>
+				<p>100 <span ng-bind="upperHouse"></span> + {{totReps}} Representatives</p>
+				<img src="img/congress.jpg">
+			</div>
+			<div class="branch">
+				<p>Executive</p>
+				<img src="img/white_house.jpg">
+			</div>
+			<div class="branch">
+				<p>Judicial</p>
+				<img src="img/supreme_court.jpg">
+			</div>
+
+
+		</div>
+		
+		<div class="questions">
+			<ng-form name="congress">
+			<p>One house of Congress is made up of 100 
+			<input type="text"
+					id="sens"
+					ng-model="upperHouse"
+					placeholder="capitalize first letter"
+					ng-pattern="/Senators/">.</p>
+			<p>The other house is made up of 
+			<input type="text"
+					id="reps"
+					ng-model="totReps"
+					ng-pattern="/435/"> Representatives.</p>
+			<p>{{upperHouse}} are elected for a 
+			<input type="number"
+					id="senTerm"
+					name="sen"
+					ng-model="senTerm"
+					placeholder="number"
+					ng-pattern="/6/"> year term.</p>
+			<p>Representatives face election every  
+			<input type="number"
+					id="houseTerm"
+					name="house"
+					ng-model="houseTerm"
+					placeholder="number"
+					ng-pattern="/2/"> years.<span class="required" ng-show="congress.house.$error.pattern">They face the voters most frequently.</span></p>
+			<p>Each state has   
+			<input type="text"
+					id="numSen"
+					name="stateSen"
+					ng-model="numSen"
+					placeholder="number"
+					ng-pattern="/2/"
+					required><span class="required" ng-show="congress.stateSen.$error.required">Required field</span> {{upperHouse}}.</p>
+			<p>The number of Representatives from each state depends on that state's    
+			<input type="text"
+					id="numReps"
+					name="stateRep"
+					ng-model="numReps"
+					ng-pattern="/population/i">.<span class="required" ng-show="congress.stateRep.$error.pattern">This is the most democratic part of Congress. The more people, the more Representatives.</span></p>
+			<p ng-show="congress.$valid">Looking good! Fill in all the blanks.</p>
+
+			<!-- have a $pristine, $dirty, $valid message -->
+
+			<ng-form>
+
+
+
+
+
+		<!--	
+
+				<form ng-submit="ctrl.submit()" name="myForm">
+					<input type="text"
+						name="answer"
+						ng-model="ctrl.username"
+						ng-pattern="/\d/">
+							<span ng-show="myForm.answer.$error.pattern">
+								Must be a number.
+							</span>
+					<input type="submit" value="Submit">
+				</form>
+		-->
+		</div>
+	</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
+<script type="text/javascript">
+	angular.module('formApp', [])
+		.controller('MainCtrl', [function() {
+			var self = this;
+			self.submit = function() {
+				console.log("Submitted with", self.username);
+			};
+		}]);
+</script>
+</body>
+</html>

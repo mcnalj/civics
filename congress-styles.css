@@ -1,0 +1,97 @@
+html {
+	background-color: Blue;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: white;
+}
+
+body {
+	margin: 0 auto;
+	align: center;
+}
+h1 {
+	font-size: 3.5em;
+	width: 100%;
+	text-align: center;
+}
+.wrapper {
+	display: -webkit-flex;
+	display: flex;
+	width: 94%;
+	margin: 0 auto;
+	align: center;
+	
+	
+}
+.branch {
+	font-size: 2.5em;
+	text-align: center;
+}
+.wrapper div {
+	-webkit-flex: 1;
+	flex: 1;
+}
+.wrapper p {
+	margin: 0.1em;
+}
+.fill {
+	color: PaleVioletRed;
+}
+.questions {
+	background-color: LightBlue;
+	color: black;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-bottom: 2%;	
+}
+.questions p {
+	font-size: 1.65em;
+	margin: .5em;
+}
+.instructions {
+	text-align: center;
+}
+#start {
+	font-size: 1.25em;
+	color: green;
+}
+#working {
+	font-size: 1.25em;
+	color: purple;
+
+}
+#finishing {
+	font-size: 1.25em;
+	color: green;
+}
+
+
+input {
+	font-size: .75em;
+}
+.ng-dirty #sens, 
+.ng-dirty #reps, 
+.ng-dirty #senTerm, 
+.ng-dirty #houseTerm, 
+.ng-dirty #numSen, 
+.ng-dirty #numReps {
+	color: purple;
+}
+.ng-valid-pattern #sens, 
+.ng-valid-pattern #reps, 
+.ng-valid-pattern #senTerm, 
+.ng-valid-pattern #houseTerm, 
+.ng-valid-pattern #numSen, 
+.ng-valid-pattern #numReps {
+	color: green;
+	border-color: green;
+}
+.ng-pristine {
+	border-color: black;
+}
+
+
+.required {
+	color: red;
+	font-size: .5em;
+}
+

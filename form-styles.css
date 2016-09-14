@@ -1,0 +1,66 @@
+html {
+	background-color: LightGray;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+body {
+	margin: 0 auto;
+	align: center;
+}
+h1 {
+	font-size: 3em;
+	width: 100%;
+	text-align: center;
+}
+.wrapper {
+	display: -webkit-flex;
+	display: flex;
+	width: 98%;
+	background-color: LightBlue;
+	margin: 0 auto;
+	align: center;
+	font-size: 2em;
+}
+.wrapper div {
+	-webkit-flex: 1;
+	flex: 1;
+}
+.wrapper p {
+	margin: 0.1em;
+}
+.questions p {
+	font-size: .75em;
+	margin: .5em;
+}
+
+
+input {
+	font-size: .75em;
+}
+.ng-dirty #sens, 
+.ng-dirty #reps, 
+.ng-dirty #senTerm, 
+.ng-dirty #houseTerm, 
+.ng-dirty #numSen, 
+.ng-dirty #numReps {
+	color: purple;
+}
+.ng-valid-pattern #sens, 
+.ng-valid-pattern #reps, 
+.ng-valid-pattern #senTerm, 
+.ng-valid-pattern #houseTerm, 
+.ng-valid-pattern #numSen, 
+.ng-valid-pattern #numReps {
+	color: green;
+	border-color: green;
+}
+.ng-pristine {
+	border-color: black;
+}
+
+
+.required {
+	color: red;
+	font-size: .5em;
+}
+
